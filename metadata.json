@@ -1,0 +1,5 @@
+{
+  "name": "OpenClaw Copilot",
+  "description": "AI-driven personal workflow automation platform for researchers and creators.",
+  "requestFramePermissions": ["notification", "file_read", "file_write"]
+}

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Default Light Theme */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f4f4f5; /* Zinc 100 */
+  --color-card: #ffffff;
+  --color-border: #e4e4e7;       /* Zinc 200 */
+  --color-accent: #f97316;       /* Orange 500 */
+  --color-accent-hover: #ea580c; /* Orange 600 */
+  --color-text-primary: #18181b; /* Zinc 900 */
+  --color-text-secondary: #71717a; /* Zinc 500 */
+}
+
+/* Dark Theme Overrides */
+.dark {
+  --color-bg: #09090b;        /* Zinc 950 */
+  --color-bg-secondary: #18181b; /* Zinc 900 */
+  --color-card: #18181b;      /* Zinc 900 */
+  --color-border: #27272a;    /* Zinc 800 */
+  --color-accent: #f97316;    /* Orange 500 */
+  --color-accent-hover: #ea580c; /* Orange 600 */
+  --color-text-primary: #f4f4f5; /* Zinc 100 */
+  --color-text-secondary: #a1a1aa; /* Zinc 400 */
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased transition-colors duration-300;
+  }
+}
+
+.glass {
+  @apply bg-card/95 backdrop-blur-sm border border-border;
+}
+
+.status-pulse {
+  @apply w-2 h-2 rounded-full bg-emerald-500 animate-pulse;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400 dark:bg-zinc-600;
+}
